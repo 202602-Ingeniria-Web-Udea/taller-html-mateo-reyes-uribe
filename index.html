@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick & Morty</title>
+    <link rel="preconnect" href="https://rickandmortyapi.com" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-content">
+        <h1><span class="logo-icon">🛸</span> Rick &amp; Morty Explorer</h1>
+        <p class="subtitle">
+          Busca personajes del multiverso usando de Rick and Morty
+        </p>
+      </div>
+      <button
+        id="theme-toggle-btn"
+        class="theme-toggle"
+        title="Cambiar tema"
+        aria-label="Cambiar tema claro/oscuro"
+      >
+        🌙
+      </button>
+    </header>
+
+    <main class="app-main">
+      <section class="search-panel" aria-label="Panel de búsqueda">
+        <div class="search-row">
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Buscar personaje por nombre (ej. Rick, Morty, Summer)..."
+            autocomplete="off"
+          />
+          <select
+            id="status-filter"
+            class="status-filter"
+            aria-label="Filtrar por estado"
+          >
+            <option value="">Todos los estados</option>
+            <option value="alive">Vivo</option>
+            <option value="dead">Muerto</option>
+            <option value="unknown">Desconocido</option>
+          </select>
+          <button id="search-btn" class="search-btn">🔍 Buscar</button>
+        </div>
+        <div class="quick-actions">
+          <button id="show-favorites-btn" class="favorites-toggle-btn">
+            ⭐ Ver favoritos
+          </button>
+          <span id="results-count" class="results-count"></span>
+        </div>
+      </section>
+
+      <!-- Estado de carga -->
+      <div id="loading-indicator" class="loading-indicator hidden">
+        <div class="spinner"></div>
+        <p>Cargando personajes...</p>
+      </div>
+
+      <!-- Mensaje de error / sin resultados -->
+      <div id="error-message" class="error-message hidden"></div>
+
+      <!-- Listado dinámico de personajes -->
+      <section
+        id="results-grid"
+        class="results-grid"
+        aria-live="polite"
+      ></section>
+
+      <!-- Paginación simple -->
+      <div id="pagination" class="pagination hidden">
+        <button id="prev-page-btn" class="page-btn">⬅ Anterior</button>
+        <span id="page-info" class="page-info"></span>
+        <button id="next-page-btn" class="page-btn">Siguiente ➡</button>
+      </div>
+    </main>
+
+    <!-- Modal con detalle del personaje seleccionado -->
+    <div id="character-modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="modal-close-btn" class="modal-close" aria-label="Cerrar">
+          ✖
+        </button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      <p>
+        Proyecto académico — Taller Evaluativo 1, Ingeniería Web. Datos de
+        <a
+          href="https://rickandmortyapi.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >The Rick and Morty API</a
+        >.
+      </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
