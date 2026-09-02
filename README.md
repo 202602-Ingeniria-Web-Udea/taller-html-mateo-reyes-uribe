@@ -13,7 +13,6 @@
 
 ![Sin dependencias](https://img.shields.io/badge/dependencias-0-brightgreen?style=flat-square)
 ![Sin build](https://img.shields.io/badge/build_step-ninguno-blue?style=flat-square)
-![Vanilla JS](https://img.shields.io/badge/framework-vanilla-yellow?style=flat-square)
 ![Licencia](https://img.shields.io/badge/licencia-académica-lightgrey?style=flat-square)
 
 <br />
